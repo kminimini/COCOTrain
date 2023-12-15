@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-/* TODO 도시코드 목록 조회 */
+/* TODO 도시코드 목록 조회  */
 public class ApiExplorer {
 	@Value("${api.ctyCode}")
 	private String ctyCode;
