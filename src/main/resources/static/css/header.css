@@ -1,0 +1,41 @@
+@charset "EUC-KR";
+
+.wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+	/* 가시성 향상을 위한 패딩 추가 */
+}
+
+.container {
+	margin: 0 auto;
+	width: 150%;
+	font-weight: bold;
+	border-bottom: 2px solid #eee;
+	/* 아래 선 추가 */
+	padding-bottom: 10px;
+	/* 아래 선과의 간격을 위한 패딩 추가 */
+}
+
+.fs-4 {
+	text-decoration: none;
+	/* 밑줄 없애기 */
+}
+
+.nav {
+	float: left;
+	/* 네비게이션 링크를 왼쪽 정렬하도록 조정 */
+}
+
+.btn {
+	float: right;
+	font-weight: bold;
+}
+
+/* float 이슈를 해결하기 위한 clearfix */
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}

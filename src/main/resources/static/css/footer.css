@@ -1,0 +1,29 @@
+@charset "EUC-KR";
+
+footer {
+	border-top: 240px solid white;
+	/* 높이를 50px로 수정 */
+	background-color: #f8f9fa;
+	padding: 1rem 0;
+	margin: 1rem 0;
+}
+
+.footer-message {
+	font-weight: bold;
+	font-size: 0.9rem;
+	color: #545e6f;
+	margin-bottom: 0.3rem;
+	margin: 0 0 0 0.6rem;
+}
+
+.footer-contact {
+	font-size: 0.9rem;
+	color: #545e6f;
+	margin: 0.6rem;
+}
+
+.footer-copyright {
+	font-size: 0.9rem;
+	color: #545e6f;
+	margin: 0.6rem;
+}

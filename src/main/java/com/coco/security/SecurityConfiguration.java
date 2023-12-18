@@ -24,8 +24,9 @@ public class SecurityConfiguration {
    // HttpSecurity - 사용자 인증 정보를 가지고 있는 객체
    @Bean
    public SecurityFilterChain filterChain(HttpSecurity security) throws Exception {
+
       // url이 "/"인 경우 모든 접근 허가
-      security.authorizeRequests().antMatchers("/", "/system/**").permitAll();
+	   security.authorizeRequests().antMatchers("/", "/system/**").permitAll();
       // authenticated - id.pwd를 통해 사용자 인증이 된 사람만 접근할 수 있는 url
       security.authorizeRequests().antMatchers("/board/**").authenticated();
       security.authorizeRequests().antMatchers("/admin/**").hasRole("ADMIN");
@@ -36,7 +37,7 @@ public class SecurityConfiguration {
       // 사용자 인증을 위한 로그인 화면 사용 설정
       //security.formLogin().loginPage("/system/login").defaultSuccessUrl("/index", true); // 로그인에 사용할 url지정 -> 로그인 페이지
                                                                      // 제공하는 메소드 제공해야함
-      
+
       security.formLogin().loginPage("/system/login").successHandler((request, response, authentication) -> {
           Set<String> roles = AuthorityUtils.authorityListToSet(authentication.getAuthorities());
           if (roles.contains("ROLE_ADMIN")) {
@@ -46,6 +47,7 @@ public class SecurityConfiguration {
           }
        }).permitAll();
 
+      
       security.exceptionHandling().accessDeniedPage("/accessDenied");
 
       security.logout().logoutUrl("/system/logout").invalidateHttpSession(true).logoutSuccessUrl("/");

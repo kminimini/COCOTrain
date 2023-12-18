@@ -39,7 +39,6 @@ public class SecurityController {
 	/* TODO 로그인 화면 이동 */
 	@GetMapping("/login")
 	public void showLoginPage() {
-
 	}
 
 	@PostMapping("/login")
